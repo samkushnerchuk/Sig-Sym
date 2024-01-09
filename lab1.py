@@ -13,104 +13,104 @@ Made by Min-sung Koh.
 """
 # -------------------- Basics for Python -------------------------------------
 #---------- 1. Arithemtic operations
-a = 11
-print(a / 3)  
-print(a // 3) 
-print(a % 3)   
-print(a * 2)   
-print(a ** 2) 
+a = 11                          # sets 'a' to a int value
+print(a / 3)                    # does the calculation 11/3 with the answer as a float (3.6667)
+print(a // 3)                   # 11/3 but answer is a int (3)
+print(a % 3)                    # modulus operator (2)
+print(a * 2)                    # multiples 11 and 2 (22)
+print(a ** 2)                   # power function, 11^2, (121)
 print('------------')
 
-a += 1
+a += 1                          # adds 1 to the initial value (12)
+print(a)                        
+a *= 2                          # same as a = a * 2 (24)
 print(a)
-a *= 2
-print(a)
 print('------------')
 
-print(a, type(a))
+print(a, type(a))               # prints both the value of a and the data type
 print('------------')
 
-print(a, a // 3, a ** 2) 
+print(a, a // 3, a ** 2)        # prints three different answers (24)(8)(576)
 print('------------')
 
 #---------- 2. Handling strings
-str1 = 'Python'  # single quotes are used for string
-str2 = "Numpy"   # or double quotes are also O.K.
-print(str1 + ' ' + str2)
-print(len(str1), len(str2))
+str1 = 'Python'                                                 # single quotes are used for string
+str2 = "Numpy"                                                  # or double quotes are also O.K.
+print(str1 + ' ' + str2)                                        # prints both strings with a space in between
+print(len(str1), len(str2))                                     # prints the length of each string
 print('------------')
 
-print(f'This document is to introduce {str1} 3 and {str2}')
-print(f"This document is to introduce {str1} 3 and {str2}")
-str3 = '{} {} and {}'.format(str1,3,str2)  # string formatting
-print(str3)
-print('{} {} and {}'.format(str1,3,str2))
+print(f'This document is to introduce {str1} 3 and {str2}')     # a f-string is to put the other two strings in place
+print(f"This document is to introduce {str1} 3 and {str2}")     # showing that both single and double quotes work
+str3 = '{} {} and {}'.format(str1,3,str2)                       # string formatting, assigns 'str3' what is in the parentheses
+print(str3)                                                     # prints out the above
+print('{} {} and {}'.format(str1,3,str2))                       # another way of doing the one above
 print('------------')
 
-str4 = 'it is a good day!'
-print(str4.capitalize())  
-print(str4.upper())      
-print(str4.replace('a', '(aaa)'))  
-str5 = '        I hope you guys will enjoy this course!!!         '
-print(str5.strip())  
+str4 = 'it is a good day!'                                      # assigning
+print(str4.capitalize())                                        # using methods, this capitalizes the first char of the first string
+print(str4.upper())                                             # uppercases the whole string
+print(str4.replace('a', '(aaa)'))                               # replaces an 'a' with 'aaa'
+str5 = '        I hope you guys will enjoy this course!!!         ' 
+print(str5.strip())                                             # leading and trailing whitespace is removed 
 print('------------')
 
 #---------- 3. Container types such as lists, dictionaries, sets, and tuples
 # Python has built-in container types: lists, dictionaries, sets, and tuples.
 
 #----------- 3.1 Lists ----
-squares = [1, 4, 9, 16, 25]
-print(squares, squares[3])
-print(squares[-1])  
-print(squares[-3])  
+squares = [1, 4, 9, 16, 25]     # list assigned to 'squares'
+print(squares, squares[3])      # prints the whole list along with whats in index 3 (1 4 9 16 25 16)
+print(squares[-1])              # last element of the list
+print(squares[-3])              # third from last element
 print('------------')
 
-squares[2] = 'what?'    
-print(squares)
-print(squares[2], squares[0])
+squares[2] = 'what?'            # at index 2, that value is replaced with 'what?'
+print(squares)                  
+print(squares[2], squares[0])   # prints what is at index 2 and 0 (what?)(1)
 print('------------')
 
-squares.append('Next?') 
+squares.append('Next?')         # at the end of the list, add 'Next?'
+print(squares)                  
+squares.pop()                   # removes and returns the last element from the list
 print(squares) 
-squares.pop()
-print(squares) 
-squares.append(36)
+squares.append(36)              # add '36' at the end of the list
 print(squares)  
 print('------------')
 
 # In Python, "slicing" is available, where "sliceing" means sublists in a list.
-nums = list(range(5))   
-print(nums)        
-print(nums[2:4])    
-print(nums[2:])     
-print(nums[:2])     
-print(nums[:])     
-print(nums[:-1])    
-nums[2:4] = [8, 9]
-print(nums)         
+nums = list(range(5))           # creates a list 'nums' with elements from 0 to 4 using the range function 
+print(nums)                     
+print(nums[2:4])                # prints a sublist from the main one, 'nums', and only prints from index 2(inclusive) to 4(exclusive)
+print(nums[2:])                 # sublist from index 2 to the end
+print(nums[:2])                 # sublist from beginning to index 2
+print(nums[:])                  # prints whole list
+print(nums[:-1])                # sublist from beginning to the second to last
+nums[2:4] = [8, 9]              # replaces index 2 and 4 with 8 and 9
+print(nums)                     
 print('------------')
 
 # A loop (e.g., "for" statement) can be made using a list as below:
-EECourses = ['EENG 320', 'EENG 321', 'EENG 420', 'EENG 440']
-for indx, EEClass in enumerate(EECourses):
-    print(f'#{indx} class: {EEClass}')
+EECourses = ['EENG 320', 'EENG 321', 'EENG 420', 'EENG 440']    # EECourses assigned a list of strings
+for indx, EEClass in enumerate(EECourses):                      # a for loop that iterates over the elements of EECourses, enumerate gets the index(indx) and the value(EEClass) 
+    print(f'#{indx} class: {EEClass}')                          # prints each iterating
 print('------------')
     
 # "list comprehension" is a very useful way with iteration loops as below, where
 # you want to calculate squares:
 nums = [0, 1, 2, 3, 4]
-squares = []
-for x in nums:
-    squares.append(x ** 2)
+squares = []                                                    # initilizes an empty list
+for x in nums:                                                  # variable 'x' in sequence of 'nums'
+    squares.append(x ** 2)                                      # appends the square of the current element (x) to the 'squares' list
 print(squares)  
 # You can make this code simpler using a list comprehension:
 nums = [0, 1, 2, 3, 4]
-squares = [x ** 2 for x in nums]
+squares = [x ** 2 for x in nums]                                # assigning 'squares' the for loop directly rather than making a empty list and assigning values later
 print(squares)
 
 # List comprehensions can also contain conditions:
 nums = [0, 1, 2, 3, 4]
-even_squares = [x ** 2 for x in nums if x % 2 == 0]
+even_squares = [x ** 2 for x in nums if x % 2 == 0]             # a for loop and if statment, if no remainder, then even
 print(even_squares)
 print('------------')
 
